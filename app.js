@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const fs = require('fs');
 const axios = require('axios');
-const router = express.Router();
 
 const PORT = 3000;
 
@@ -42,7 +41,7 @@ app.get("/editar", (req, res) => {
     const data = JSON.parse(fs.readFileSync("deportes.json", "utf8"));
     const deportes = data.deportes;
     deportes.map((e) => {
-        if (e.nombre === nombre){
+        if (e.nombre === nombre) {
             e.precio = precio
         } else {
             return e;
